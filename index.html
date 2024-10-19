@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #222;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .card {
+      max-width: 90%;
+      width: 300px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      margin: 20px;
+      color: white;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+      animation: pulse 2s infinite;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+      }
+
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+      }
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .cover {
+      width: 100%;
+      height: 100px;
+      background-image: url('https://via.placeholder.com/300x100');
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
+      border-radius: 10px;
+    }
+
+    .profile {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: -40px auto -5px;
+      background-color: #fff;
+      border: 3px solid rgba(255, 255, 255, 0.5);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      background-image: url('https://via.placeholder.com/80');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .text {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .titles {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      margin: 0;
+    }
+
+    .title-one {
+      color: white;
+      margin-right: 4px;
+      margin-bottom: 0;
+      margin-top: -60px;
+      /* Ajustado */
+    }
+
+    .title-two {
+      color: #00ffcc;
+      font-size: 0.9em;
+    }
+
+    .location {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -5px;
+    }
+
+    .location i {
+      margin-right: 5px;
+      color: #00ffcc;
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 15px;
+    }
+
+    .skills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+
+    .badge {
+      background-color: #444;
+      color: #00ffcc;
+      border-radius: 12px;
+      padding: 5px 10px;
+      margin: 5px;
+      font-size: 12px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .separator {
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.2);
+      margin: 15px 0;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      color: #00ffcc;
+      text-decoration: none;
+      font-size: 24px;
+      transition: color 0.3s, transform 0.3s;
+      margin: 0 5px;
+    }
+
+    .socials a:hover {
+      color: #ff00ff;
+      transform: scale(1.2);
+    }
+
+    .button {
+      background-color: #00ffcc;
+      color: #222;
+      border: none;
+      border-radius: 5px;
+      padding: 12px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .button:hover {
+      background-color: #ff00ff;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="cover"></div>
+      <div class="profile"></div>
+      <div class="text">
+        <div class="titles">
+          <h3 class="title-one">Заголовок</h3>
+          <h3 class="title-two">&lt;/&gt;</h3>
+        </div>
+        <div class="location">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Местоположение</span>
+        </div>
+        <p>Это описательный текст о человеке или содержании.</p>
+        <button class="button">Связаться</button>
+      </div>
+      <div class="skills">
+        <span class="badge">HTML</span>
+        <span class="badge">CSS</span>
+        <span class="badge">JavaScript</span>
+        <span class="badge">React</span>
+        <span class="badge">UI/UX</span>
+      </div>
+      <div class="separator"></div>
+      <div class="socials">
+        <a href="#" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" title="Twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
